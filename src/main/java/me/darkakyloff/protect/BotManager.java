@@ -36,9 +36,9 @@ public class BotManager
         {
             case "accept":
             {
-                new DetectAction().onAccept();
                 String ACCEPT_MESSAGE = JavaMain.getInstance().getConfig().getString("TG-SETTINGS.ACCEPT").replace("{user}", callbackQuery.from().username()).replace("{name}", DetectPermissionEvent.getPlayer().getName());
                 Bot.execute(new EditMessageText(CHET_ID, callbackQuery.message().messageId(), ACCEPT_MESSAGE));
+                new DetectAction().onAccept();
                 break;
             }
             case "cancel":
@@ -46,6 +46,7 @@ public class BotManager
                 String CANCEL_MESSAGE = JavaMain.getInstance().getConfig().getString("TG-SETTINGS.CANCEL").replace("{user}", callbackQuery.from().username()).replace("{name}", DetectPermissionEvent.getPlayer().getName());
                 Bot.execute(new EditMessageText(CHET_ID, callbackQuery.message().messageId(), CANCEL_MESSAGE));
                 new DetectAction().onCancel();
+                break;
             }
         }
     }

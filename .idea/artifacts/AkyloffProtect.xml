@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AkyloffProtect">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="AkyloffProtect.jar">
+      <element id="module-output" name="AkyloffProtect" />
+    </root>
+  </artifact>
+</component>

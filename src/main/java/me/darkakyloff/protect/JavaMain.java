@@ -4,6 +4,7 @@ import me.darkakyloff.protect.Events.DetectPermissionEvent;
 import me.darkakyloff.protect.Events.DisableEvents;
 import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.Bukkit;
+import org.bukkit.permissions.PermissionAttachment;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class JavaMain

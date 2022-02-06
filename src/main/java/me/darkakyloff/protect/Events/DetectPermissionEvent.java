@@ -11,6 +11,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.permissions.PermissionAttachment;
+import org.bukkit.permissions.PermissionAttachmentInfo;
+
+import java.util.Iterator;
 import java.util.UUID;
 
 public class DetectPermissionEvent
@@ -25,18 +29,20 @@ implements Listener
         return player;
     }
 
-
     @EventHandler
     public void onPlayerJoin (PlayerJoinEvent event)
     {
         player = event.getPlayer();
 
-        if (player.isOp() || player.hasPermission("*"))
-        {
-            new DetectAction().onDetect();
-        }
+        Bukkit.getLogger().info("Зашёл игрок " + player.getName() + " опка: " + event.getPlayer().isOp());
 
+        if (!player.hasPermission("*") || !player.isOp())
+        {
+            Bukkit.getLogger().info("§aЗашёл игрок без прав.");
+        }
+            new DetectAction().onDetect();
     }
+
     public DetectPermissionEvent(JavaMain plugin, LuckPerms luckPerms)
     {
         DetectPermissionEvent.plugin = plugin;
